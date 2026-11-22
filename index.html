@@ -246,6 +246,9 @@ footer b{color:var(--text)}
 .rasho-form input:focus{border-color:var(--green);outline:none;box-shadow:var(--ring)}
 .rasho-form button{background:linear-gradient(180deg,#1BD18C,#0EA873);color:#02130B;border:0;border-radius:11px;font-weight:800;padding:.6rem 1rem;cursor:pointer;min-height:2.7rem;flex:none}
 .rasho-note{font-size:.7rem;color:var(--faint);padding:0 .85rem .7rem;line-height:1.5}
+
+.wa-fab{position:fixed;left:1rem;bottom:1rem;z-index:60;width:3.4rem;height:3.4rem;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.45);text-decoration:none}
+.wa-fab svg{width:1.9rem;height:1.9rem;fill:#fff}
     </style>
   </head>
   <body id="top">
@@ -261,20 +264,7 @@ footer b{color:var(--text)}
       <div class="wrap hero">
         <div class="kicker"><span class="dot"></span> Pakistan Smartphone Price Guide · 2023 – 2025</div>
         <h1>Teen saal ke tamam phones, <span class="pk">poori details</span> ke saath.</h1>
-        <p class="lede">2023, 2024 aur 2025 mein Pakistan mein launch hone wale <b>145 models</b> — Samsung, Apple, Xiaomi, OPPO, Vivo, realme, Infinix, Tecno, Pixel, Nothing, OnePlus, Huawei aur Nokia. Har model ki <b>full specs</b> (RAM, storage, processor, camera, battery, display), <b>PTA status</b>, <b>official company page ka link</b> jahan available hai, aur price ke saath ye bhi saaf likha hai ke wo <b>launch price</b> hai ya <b>November 2026 ki current listing</b>. Jahan price ya used rate verify nahi ho saka, wahan saaf “Not verified” likha hai — koi andaza nahi lagaya gaya.</p>
-        <div class="hero-stats">
-          <div class="stat"><b>145 models</b><span>2023 · 2024 · 2025 — saal aur brand ke hisaab se filter</span></div>
-          <div class="stat"><b>13 brands</b><span>Samsung, Apple, Xiaomi (Redmi / POCO), OPPO, Vivo, realme, Infinix, Tecno, Google, Nothing, OnePlus, Huawei, Nokia — QMobile ka koi model verify nahi hua (neeche note)</span></div>
-          <div class="stat"><b>PTA + Non-PTA</b><span>Official PTA Approved aur grey-import Non-PTA alag badge ke saath</span></div>
-          <div class="stat"><b>Har price sourced</b><span>PriceOye · WhatMobile · official brand pages · 20–21 Nov 2026 ko parha gaya</span></div>
-        </div>
-        <div class="legend">
-          <span><b>Launch</b> = launch ke waqt ki price</span>
-          <span><b>Current Nov 2026</b> = aaj ki listing, launch price nahi</span>
-          <span><b>Used</b> = sirf verified asking ranges</span>
-          <span><b>Not verified</b> = source nahi mila, khali chhora gaya</span>
-          <span><b>Star City</b> = Karachi used-import asking prices, dukaan ke naam ke saath (neeche section)</span>
-        </div>
+        <p class="lede">Pakistan mein 2023–2025 mein launch hone wale tamam phones — full specs, PTA status aur official price, ek hi jagah.</p>
       </div>
     </header>
 
@@ -501,7 +491,9 @@ footer b{color:var(--text)}
       </div>
     </footer>
 
-    <button type="button" class="rasho-fab" id="rashoFab" aria-haspopup="dialog" aria-expanded="false" aria-controls="rashoPanel">
+<a class="wa-fab" href="https://wa.me/923456434988?text=Assalam-o-Alaikum%21%20Mobile%20Mandi%20par%20phone%20ke%20baare%20mein%20poochna%20hai." target="_blank" rel="noopener" aria-label="WhatsApp par rabta karein" title="WhatsApp par rabta karein"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+        <button type="button" class="rasho-fab" id="rashoFab" aria-haspopup="dialog" aria-expanded="false" aria-controls="rashoPanel">
       <span class="rb-av">RB</span> Rasho Bhai se poochho <span class="rb-dot" aria-hidden="true"></span>
     </button>
 
@@ -841,9 +833,7 @@ footer b{color:var(--text)}
           empty.classList.toggle("hidden", list.length > 0);
           more.classList.toggle("hidden", shown >= list.length);
           more.textContent = "Mazeed phones dikhao (" + (list.length - slice.length) + " baqi)";
-          var y23 = list.filter(function(p){ return p.y === 2023; }).length, y24 = list.filter(function(p){ return p.y === 2024; }).length, y25 = list.filter(function(p){ return p.y === 2025; }).length;
-          var nv = list.filter(function(p){ return p.pt === "nv"; }).length;
-          count.innerHTML = "<b>" + list.length + "</b> phones dikh rahe hain · 2023: <b>" + y23 + "</b> · 2024: <b>" + y24 + "</b> · 2025: <b>" + y25 + "</b> · price not verified: <b>" + nv + "</b>";
+          count.innerHTML = "<b>" + list.length + "</b> phones dikh rahe hain";
         }
         render();
       })();
