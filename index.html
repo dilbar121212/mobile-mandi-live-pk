@@ -11,16 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
     <style>
 :root{
-  --bg:#070A12; --bg2:#0A0F1A; --panel:#101828; --panel2:#0C1322; --panel3:#182238;
-  --line:#22304D; --line-soft:#182238; --line-bright:#33477A;
-  --text:#F2F5F9; --muted:#A9B7CC; --faint:#71809B;
-  --green:#10B981; --green2:#34D399; --greenb:#6EE7B7; --greend:#052E21; --greendeep:#065F46;
-  --amber:#F5B544; --ambers:#FCD34D; --red:#FCA5A5; --redline:rgba(248,113,113,.35);
-  --sky:#7DD3FC;
-  --r:18px; --rs:11px;
-  --shadow:0 24px 60px -22px rgba(0,0,0,.75);
-  --shadowc:0 2px 6px rgba(0,0,0,.35),0 18px 36px -18px rgba(0,0,0,.6);
-  --ring:0 0 0 3px rgba(16,185,129,.18);
+  --bg:#FFFFFF; --bg2:#F4F6FB; --panel:#FFFFFF; --panel2:#F8F9FD; --panel3:#EDF0F8;
+  --line:#DFE4EE; --line-soft:#E8EBF3; --line-bright:#B9C4DC;
+  --text:#17172B; --muted:#4A5568; --faint:#8A94A6;
+  --blue:#1A237E; --blue2:#283593; --blue-soft:#E8EAF6;
+  --green:#7CB342; --green2:#558B2F; --greenb:#33691E; --greend:#EFF7E6; --greendeep:#558B2F;
+  --amber:#F5B544; --ambers:#B45309; --red:#C62828; --redline:rgba(198,40,40,.25);
+  --sky:#283593;
+  --r:14px; --rs:10px;
+  --shadow:0 12px 32px -18px rgba(26,35,126,.28);
+  --shadowc:0 1px 3px rgba(16,24,40,.10),0 10px 24px -14px rgba(16,24,40,.18);
+  --ring:0 0 0 3px rgba(26,35,126,.14);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -36,16 +37,16 @@ button,select,input{font:inherit}
 .hidden{display:none !important}
 
 /* ===== NAV ===== */
-.topnav{position:sticky;top:0;z-index:70;background:rgba(7,10,18,.9);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--line-soft)}
+.topnav{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
 .topnav-in{display:flex;align-items:center;gap:1.25rem;padding:.68rem 0}
 .brandmark{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--text);flex:none}
-.brandmark .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#1BD18C,#059669);display:flex;align-items:center;justify-content:center;font-family:"Archivo",sans-serif;font-weight:900;font-size:.8rem;color:#02120B;box-shadow:0 8px 20px -8px rgba(16,185,129,.8)}
+.brandmark .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#283593,#1A237E);display:flex;align-items:center;justify-content:center;font-family:"Archivo",sans-serif;font-weight:900;font-size:.8rem;color:#FFFFFF;box-shadow:0 8px 20px -8px rgba(26,35,126,.55)}
 .brandmark b{font-family:"Archivo",sans-serif;font-size:.9rem;font-weight:800;display:block;line-height:1.1}
-.brandmark span.sub{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--greenb)}
+.brandmark span.sub{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2)}
 .topnav nav{display:flex;gap:.2rem;margin-left:auto}
 .topnav nav a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:600;padding:.45rem .65rem;border-radius:9px}
-.topnav nav a:hover{color:var(--text);background:rgba(255,255,255,.05)}
-.nav-date{flex:none;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--greenb);border:1px solid rgba(16,185,129,.35);background:rgba(16,185,129,.08);border-radius:999px;padding:.4rem .7rem}
+.topnav nav a:hover{color:var(--blue);background:rgba(26,35,126,.06)}
+.nav-date{flex:none;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);border:1px solid rgba(26,35,126,.3);background:rgba(26,35,126,.06);border-radius:999px;padding:.4rem .7rem}
 @media (max-width:860px){.topnav nav{display:none}}
 @media (max-width:480px){.nav-date{display:none}}
 
@@ -88,21 +89,21 @@ header::before{content:"";position:absolute;inset:0;background-image:linear-grad
 .search-box:focus-within{border-color:var(--green);box-shadow:var(--ring)}
 select.flt{flex:1 1 148px;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:0 .7rem;font-size:.83rem;font-weight:600;cursor:pointer;min-height:2.6rem}
 select.flt:hover{border-color:var(--line-bright)}
-.chips{display:flex;gap:.38rem;flex-wrap:wrap}
-.chip{border:1px solid var(--line);background:var(--panel2);color:var(--muted);border-radius:999px;padding:.3rem .8rem;font-size:.79rem;font-weight:600;cursor:pointer;min-height:2rem;transition:all .15s}
-.chip:hover{color:var(--text);border-color:var(--line-bright)}
-.chip.active{background:var(--green);border-color:var(--green);color:#02130B}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:.6rem}
+.chip{border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:12px;padding:.85rem .5rem;font-size:.92rem;font-weight:700;cursor:pointer;min-height:3.2rem;transition:all .15s;text-align:center}
+.chip:hover{border-color:var(--blue);background:var(--blue-soft)}
+.chip.active{background:var(--blue);border-color:var(--blue);color:#fff}
 .chips-amber .chip.active{background:var(--amber);border-color:var(--amber);color:#1C1005}
 .count-line{font-size:.85rem;color:var(--muted)}
 .count-line b{color:var(--text)}
 
 /* ===== CARDS ===== */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:.9rem;padding-bottom:.4rem}
-@media (max-width:380px){.grid{grid-template-columns:1fr}}
-.card{background:linear-gradient(180deg,#121B2D,var(--panel2));border:1px solid var(--line-soft);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadowc);transition:transform .2s,border-color .2s}
-.card:hover{transform:translateY(-4px);border-color:var(--line-bright)}
-.card-media{background:radial-gradient(440px 230px at 50% -10%,#FFFFFF,#E7EDF5 82%);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.card-media img{width:100%;height:100%;object-fit:contain;padding:.45rem;filter:drop-shadow(0 10px 14px rgba(15,23,42,.18))}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:.8rem;padding-bottom:.4rem}
+@media (max-width:720px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;display:flex;flex-direction:row;box-shadow:var(--shadowc);transition:border-color .2s}
+.card:hover{transform:none;border-color:var(--line-bright)}
+.card-media{background:#fff;width:128px;height:170px;flex:none;align-self:flex-start;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-right:1px solid var(--line-soft)}
+.card-media img{width:100%;height:100%;object-fit:contain;padding:.5rem;filter:none}
 .tile{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;color:#fff;text-align:center;padding:.8rem}
 .tile .shape{width:44px;height:74px;border-radius:10px;border:2.5px solid rgba(255,255,255,.85);position:relative;background:rgba(255,255,255,.08);box-shadow:0 14px 24px -12px rgba(0,0,0,.45)}
 .tile .shape::before{content:"";position:absolute;top:5px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.85)}
@@ -153,13 +154,13 @@ select.flt:hover{border-color:var(--line-bright)}
 /* ===== SECTIONS ===== */
 section.block{padding:2.3rem 0 0}
 .sec-head{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.05rem}
-.sec-num{flex:none;width:38px;height:38px;border-radius:11px;background:linear-gradient(160deg,rgba(16,185,129,.18),rgba(16,185,129,.05));border:1px solid var(--greendeep);color:var(--greenb);font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.82rem;display:flex;align-items:center;justify-content:center}
+.sec-num{flex:none;width:38px;height:38px;border-radius:11px;background:linear-gradient(160deg,rgba(26,35,126,.12),rgba(26,35,126,.04));border:1px solid var(--line-bright);color:var(--blue);font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.82rem;display:flex;align-items:center;justify-content:center}
 .sec-head h2{font-size:clamp(1.28rem,3vw,1.65rem);font-weight:800;letter-spacing:-.02em}
 .sec-head p{color:var(--muted);margin:.35rem 0 0;max-width:720px;line-height:1.6;font-size:.88rem}
-.panel{background:linear-gradient(180deg,#121A2C,var(--panel2));border:1px solid var(--line-soft);border-radius:var(--r);padding:1.35rem;box-shadow:var(--shadowc)}
+.panel{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r);padding:1.35rem;box-shadow:var(--shadowc)}
 @media (max-width:560px){.panel{padding:1.05rem}}
 .guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.85rem}
-.guide{background:linear-gradient(180deg,#121A2C,var(--panel2));border:1px solid var(--line-soft);border-radius:16px;padding:1.05rem 1.1rem}
+.guide{background:var(--panel);border:1px solid var(--line-soft);border-radius:16px;padding:1.05rem 1.1rem}
 .guide b{display:block;font-size:.96rem;font-family:"Archivo",sans-serif;margin-bottom:.3rem}
 .guide p{margin:0;font-size:.85rem;color:var(--muted);line-height:1.62}
 .guide .big{display:inline-block;font-family:"JetBrains Mono",monospace;color:var(--green2);font-size:.86rem;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:-.01em;background:rgba(16,185,129,.09);border:1px solid rgba(16,185,129,.22);border-radius:7px;padding:.05rem .45rem;line-height:1.5;vertical-align:baseline}
@@ -210,10 +211,10 @@ footer b{color:var(--text)}
 .caution-list b{color:var(--text)}
 
 /* ===== RASHO BHAI CHAT ===== */
-.rasho-fab{position:fixed;right:1rem;bottom:1rem;z-index:90;display:flex;align-items:center;gap:.55rem;background:linear-gradient(180deg,#1BD18C,#0EA873);color:#02130B;border:1px solid #10B981;border-radius:999px;padding:.62rem 1rem .62rem .68rem;font-weight:800;font-size:.88rem;cursor:pointer;box-shadow:0 16px 36px -10px rgba(16,185,129,.55),0 8px 20px rgba(0,0,0,.5);min-height:3rem}
+.rasho-fab{position:fixed;right:1rem;bottom:1rem;z-index:90;display:flex;align-items:center;gap:.55rem;background:linear-gradient(180deg,#283593,#1A237E);color:#fff;border:1px solid #1A237E;border-radius:999px;padding:.62rem 1rem .62rem .68rem;font-weight:800;font-size:.88rem;cursor:pointer;box-shadow:0 16px 36px -10px rgba(26,35,126,.5),0 8px 20px rgba(0,0,0,.3);min-height:3rem}
 .rasho-fab:hover{filter:brightness(1.06)}
-.rasho-fab .rb-av{width:30px;height:30px;border-radius:50%;background:#02130B;color:#6EE7B7;display:flex;align-items:center;justify-content:center;font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:900;flex:none}
-.rasho-fab .rb-dot{width:8px;height:8px;border-radius:50%;background:#02130B;flex:none}
+.rasho-fab .rb-av{width:30px;height:30px;border-radius:50%;background:#fff;color:#1A237E;display:flex;align-items:center;justify-content:center;font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:900;flex:none}
+.rasho-fab .rb-dot{width:8px;height:8px;border-radius:50%;background:#fff;flex:none}
 .rasho-panel{position:fixed;right:1rem;bottom:4.6rem;z-index:91;width:min(392px,calc(100vw - 1.5rem));height:min(600px,calc(100dvh - 6rem));background:linear-gradient(180deg,#121B2D,#0C1322);border:1px solid var(--line-bright);border-radius:18px;box-shadow:0 28px 70px -18px rgba(0,0,0,.85);display:flex;flex-direction:column;overflow:hidden}
 @media (max-width:560px){.rasho-panel{right:.75rem;bottom:4.4rem}.rasho-fab{right:.75rem;bottom:.75rem}}
 .rasho-head{display:flex;align-items:center;gap:.65rem;padding:.8rem .9rem;background:rgba(16,185,129,.08);border-bottom:1px solid var(--line-soft)}
@@ -249,24 +250,110 @@ footer b{color:var(--text)}
 
 .wa-fab{position:fixed;left:1rem;bottom:1rem;z-index:60;width:3.4rem;height:3.4rem;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.45);text-decoration:none}
 .wa-fab svg{width:1.9rem;height:1.9rem;fill:#fff}
+
+/* ===== WHATMOBILE-STYLE (light, blue) ===== */
+.wm-menu{display:none;flex:none;width:40px;height:40px;border:0;background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.wm-menu span{display:block;width:22px;height:2px;background:#1A237E;border-radius:2px}
+.wm-menu i{position:absolute;width:9px;height:9px;border-radius:50%;background:#E53935;margin:14px 0 0 14px}
+.wm-icons{display:flex;gap:.15rem;margin-left:auto;align-items:center}
+.wm-icons button{border:0;background:transparent;cursor:pointer;padding:.45rem;border-radius:9px;display:flex;align-items:center}
+.wm-icons button:hover{background:rgba(26,35,126,.07)}
+.topnav-in .wm-icons{margin-left:auto}
+.topnav nav{margin-left:0}
+@media (max-width:860px){
+  .wm-menu{display:flex}
+  .topnav nav{display:none}
+  .topnav nav.open{display:flex;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:.5rem .8rem;border-bottom:1px solid var(--line-soft);box-shadow:var(--shadowc);gap:0}
+  .topnav nav.open a{padding:.7rem .5rem;border-bottom:1px solid var(--line-soft)}
+  .topnav-in{position:relative;gap:.6rem}
+}
+.wm-banner{background:linear-gradient(115deg,#0A1445 0%,#1A237E 55%,#283593 100%);position:relative;overflow:hidden}
+.wm-banner::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 220px at 85% 10%,rgba(255,255,255,.22),transparent 60%),radial-gradient(500px 300px at 10% 110%,rgba(124,179,66,.35),transparent 60%);pointer-events:none}
+.wm-banner-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.7rem 0 1.2rem;position:relative;z-index:1}
+.wm-banner-text span{display:block;color:#fff;font-size:clamp(1.5rem,5vw,2.4rem);font-weight:300}
+.wm-banner-text b{display:block;color:#fff;font-size:clamp(2.1rem,7vw,3.3rem);font-weight:900;line-height:1;letter-spacing:.02em}
+.wm-banner-phones{display:flex;align-items:flex-end;gap:.4rem;flex:none}
+.wm-banner-phones img{width:clamp(64px,14vw,150px);height:clamp(96px,20vw,210px);object-fit:contain;background:#fff;border-radius:12px;padding:.35rem;filter:drop-shadow(0 14px 18px rgba(0,0,0,.45))}
+.wm-banner-phones img:nth-child(2){width:clamp(78px,16vw,178px);height:clamp(114px,23vw,248px)}
+.wm-banner-dots{display:flex;justify-content:center;gap:.4rem;padding:0 0 .9rem;position:relative;z-index:1}
+.wm-banner-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4)}
+.wm-banner-dots i.on{background:#fff}
+.wm-sec{font-size:1.45rem;font-weight:400;color:var(--text);margin:1.4rem 0 .8rem}
+.wm-strip{display:flex;gap:.7rem;overflow-x:auto;padding-bottom:.6rem;scroll-snap-type:x mandatory}
+.wm-strip::-webkit-scrollbar{height:6px}
+.wm-strip::-webkit-scrollbar-thumb{background:#C5CEE6;border-radius:3px}
+.wm-mini{flex:0 0 148px;scroll-snap-align:start;background:#fff;border:1px solid var(--line-soft);border-radius:12px;padding:.7rem .6rem;text-align:center;cursor:pointer}
+.wm-mini img{width:100%;height:118px;object-fit:contain}
+.wm-mini b{display:block;color:var(--blue);font-weight:700;font-size:.92rem;line-height:1.25;margin:.5rem 0 .15rem}
+.wm-mini span{color:var(--red);font-weight:700;font-size:.95rem}
+.card-body{padding:.85rem .95rem;flex:1;min-width:0;display:flex;flex-direction:column;gap:.32rem}
+.card-body .brand-line{color:var(--faint);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.card-body h3{color:var(--blue);font-size:1.12rem;font-weight:700;line-height:1.25}
+.spec-line{margin:0;font-size:.86rem;color:var(--text);line-height:1.5}
+.price-row{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:.15rem}
+.price-tag{background:#8BC34A;color:#fff;font-weight:800;font-size:.98rem;border-radius:6px;padding:.28rem .7rem;white-space:nowrap}
+.price-tag.nv{background:#E8EBF3;color:var(--muted)}
+.price-type{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border-radius:6px;padding:.2rem .45rem;white-space:nowrap}
+.price-type.nv{color:var(--faint);background:var(--panel3)}
+.card-media .b-year{display:none}
+.b-pta.ok{background:#E8F5E9;color:#33691E;border-color:#7CB342}
+.b-pta.no{background:#FFF3E0;color:#B45309;border-color:#F5B544}
+.b-pta.un{background:#F1F3F7;color:#5A6478;border-color:#C5CEE6}
+.b-photo{background:rgba(255,255,255,.94);color:var(--blue);border:1px solid var(--line)}
+.off-btn:hover{background:var(--green);border-color:var(--green);color:#fff}
+.catalog-bar{background:#fff;border-bottom:1px solid var(--line-soft)}
+.tabs .tab-btn,.tab-btn{background:#fff;color:var(--text);border:1px solid var(--line)}
+.tabs .tab-btn.active,.tab-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tabs .tab-btn.active .n,.tab-btn.active .n{background:rgba(255,255,255,.22);color:#fff;border-color:rgba(255,255,255,.35)}
+@media (max-width:760px){.tab-btn{font-size:.85rem;padding:.6rem .4rem}}
+body.wm-grid .grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+body.wm-grid .card{flex-direction:column}
+body.wm-grid .card-media{width:100%;aspect-ratio:16/9;border-right:0;border-bottom:1px solid var(--line-soft);height:auto;align-self:stretch}
+body.wm-grid .card-media .b-year{display:block}
+.wm-bottombar{display:none}
+@media (max-width:760px){
+  body{padding-bottom:4.4rem}
+  .wm-bottombar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:80;background:#1565C0;color:#fff;box-shadow:0 -4px 18px rgba(0,0,0,.25)}
+  .wm-bottombar button{flex:1;border:0;background:transparent;color:#fff;font-size:.74rem;font-weight:700;padding:.55rem .1rem .6rem;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.2rem}
+  .wm-bottombar button:active{background:#0D47A1}
+  .wa-fab{bottom:4.9rem}
+  .rasho-fab{bottom:4.9rem}
+}
+.used-line b{white-space:normal;text-align:right}
+.used-line span{white-space:normal}
+#catalog{scroll-margin-top:64px}
+.grid{scroll-margin-top:180px}
     </style>
   </head>
   <body id="top">
     <div class="topnav"><div class="wrap topnav-in">
+      <button type="button" class="wm-menu" id="wmMenuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span><i></i></button>
       <a class="brandmark" href="#top"><span class="mark">MM</span><span><b>Mobile Mandi</b><span class="sub">Live · Pakistan</span></span></a>
-      <nav aria-label="Main">
+      <nav aria-label="Main" id="wmNav">
         <a href="#catalog">All Phones</a><a href="#starcity">Star City Used</a><a href="#budget">Budget Finder</a><a href="#pta">PTA Guide</a><a href="#used-guide">Used Guide</a><a href="#sources">Sources</a><a href="#" id="navRasho" style="color:var(--greenb)">Rasho Bhai Chat</a>
       </nav>
       <span class="nav-date">Data read · 20–21 Nov 2026</span>
+      <span class="wm-icons">
+        <button type="button" id="wmSearchBtn" aria-label="Search"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#1A237E" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg></button>
+        <button type="button" id="wmFilterBtn" aria-label="Filter"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#1A237E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v5l-4 2v-7L3 5z"/></svg></button>
+      </span>
     </div></div>
 
-    <header>
-      <div class="wrap hero">
-        <div class="kicker"><span class="dot"></span> Pakistan Smartphone Price Guide · 2023 – 2025</div>
-        <h1>Teen saal ke tamam phones, <span class="pk">poori details</span> ke saath.</h1>
-        <p class="lede">Pakistan mein 2023–2025 mein launch hone wale tamam phones — full specs, PTA status aur official price, ek hi jagah.</p>
+    <section class="wm-banner">
+      <div class="wrap wm-banner-in">
+        <div class="wm-banner-text"><span>New &amp; Used</span><b>PHONES</b></div>
+        <div class="wm-banner-phones">
+          <img id="bnImg0" alt="Latest phone" /><img id="bnImg1" alt="Latest phone" /><img id="bnImg2" alt="Latest phone" />
+        </div>
       </div>
-    </header>
+      <div class="wm-banner-dots"><i class="on"></i><i></i><i></i></div>
+    </section>
+
+    <section class="wrap wm-latest">
+      <h2 class="wm-sec">Latest Mobiles</h2>
+      <div class="wm-strip" id="latestStrip"></div>
+    </section>
+
 
     <div class="catalog-bar" id="catalog">
       <div class="wrap">
@@ -310,6 +397,7 @@ footer b{color:var(--text)}
               <option value="name">Naam A–Z</option>
             </select>
           </div>
+          <h2 class="wm-sec">Search by Brand</h2>
           <div class="chips" id="chipsNew" role="group" aria-label="Filter by brand"></div>
           <div class="count-line" id="countNew"></div>
         </div>
@@ -493,7 +581,14 @@ footer b{color:var(--text)}
 
 <a class="wa-fab" href="https://wa.me/923456434988?text=Assalam-o-Alaikum%21%20Mobile%20Mandi%20par%20phone%20ke%20baare%20mein%20poochna%20hai." target="_blank" rel="noopener" aria-label="WhatsApp par rabta karein" title="WhatsApp par rabta karein"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
-        <button type="button" class="rasho-fab" id="rashoFab" aria-haspopup="dialog" aria-expanded="false" aria-controls="rashoPanel">
+        <nav class="wm-bottombar" aria-label="Catalog actions">
+      <button type="button" id="bbSort"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>Sort By</button>
+      <button type="button" id="bbList"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg>List View</button>
+      <button type="button" id="bbGrid"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><rect x="13.5" y="13.5" width="7" height="7" rx="1"/></svg>Grid View</button>
+      <button type="button" id="bbFilter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 5h16M7 12h10M10 19h4"/></svg>Filter</button>
+    </nav>
+
+    <button type="button" class="rasho-fab" id="rashoFab" aria-haspopup="dialog" aria-expanded="false" aria-controls="rashoPanel">
       <span class="rb-av">RB</span> Rasho Bhai se poochho <span class="rb-dot" aria-hidden="true"></span>
     </button>
 
@@ -733,8 +828,9 @@ footer b{color:var(--text)}
       }
       function specRow(k, v){ return "<tr><td class='k'>" + k + "</td><td class='v'>" + esc(v) + "</td></tr>"; }
       function cardHTML(p){
-        var priceCls = p.pt === "nv" ? "price-val nv" : "price-val";
-        var typeCls = p.pt === "launch" ? "price-type launch" : (p.pt === "nv" ? "price-type nv" : "price-type");
+        var typeCls = p.pt === "nv" ? "price-type nv" : "price-type";
+        var tagCls = p.pt === "nv" ? "price-tag nv" : "price-tag";
+        var specLine = esc(p.ram) + " · " + esc(p.chip) + " · " + esc(p.cam) + " · " + esc(p.bat) + " · " + esc(p.disp);
         var used = p.used
           ? "<div class='used-line'><span>Used range</span><b>" + esc(p.used) + "</b></div><div class='src-line'>Used source: <b>" + esc(p.usrc || "") + "</b> — asking prices, haalat par munhasir</div>"
           : "<div class='used-line nv'><span>Used price</span><b>Not verified — koi systematic source nahi mila</b></div>";
@@ -744,27 +840,22 @@ footer b{color:var(--text)}
         var note = p.note ? "<div class='note-line" + (p.pt === "nv" ? " info" : "") + "'>" + esc(p.note) + "</div>" : "";
         return "<article class='card'>" + mediaHTML(p) +
           "<div class='card-body'>" +
-            "<div><div class='brand-line'>" + esc(p.b) + " · " + p.y + "</div><h3>" + esc(p.n) + "</h3></div>" +
-            "<table class='spec-table'>" +
-              specRow("RAM / Storage", p.ram) + specRow("Processor", p.chip) + specRow("Camera", p.cam) + specRow("Battery", p.bat) + specRow("Display", p.disp) +
-            "</table>" +
-            "<div class='price-block'>" +
-              "<div class='price-main'><span class='" + typeCls + "'>" + PT_LABEL[p.pt] + "</span><span class='" + priceCls + "'>" + esc(p.price) + "</span></div>" +
-              (p.pt !== "nv" ? "<div class='src-line'>Source: <b>" + esc(p.src) + "</b> · parha gaya 20–21 Nov 2026</div>" : "<div class='src-line'>Kisi source mein is model ki price verify nahi ho saki — andaza nahi lagaya gaya.</div>") +
-              used + note + off +
-            "</div>" +
+            "<div class='brand-line'>" + esc(p.b) + " · " + p.y + "</div><h3>" + esc(p.n) + "</h3>" +
+            "<p class='spec-line'>" + specLine + "</p>" +
+            "<div class='price-row'><span class='" + tagCls + "'>" + esc(p.price) + "</span><span class='" + typeCls + "'>" + PT_LABEL[p.pt] + "</span></div>" +
+            (p.pt !== "nv" ? "<div class='src-line'>Source: <b>" + esc(p.src) + "</b> · parha gaya 20–21 Nov 2026</div>" : "<div class='src-line'>Kisi source mein is model ki price verify nahi ho saki — andaza nahi lagaya gaya.</div>") +
+            used + note + off +
           "</div></article>";
       }
       function usedCardHTML(p){
+        var specLine = esc(p.ram) + " · " + esc(p.chip) + " · " + esc(p.cam) + " · " + esc(p.bat) + " · " + esc(p.disp);
         return "<article class='card'>" + mediaHTML(p) +
           "<div class='card-body'>" +
-            "<div><div class='brand-line amber'>" + esc(p.b) + " · Used · " + p.y + "</div><h3>" + esc(p.n) + "</h3></div>" +
-            "<table class='spec-table'>" + specRow("RAM / Storage", p.ram) + specRow("Processor", p.chip) + specRow("Camera", p.cam) + specRow("Battery", p.bat) + specRow("Display", p.disp) + "</table>" +
-            "<div class='price-block'>" +
-              "<div class='used-line'><span>Used asking range</span><b>" + esc(p.used) + "</b></div>" +
-              "<div class='src-line'>Source: <b>" + esc(p.usrc || "") + "</b> · New price: " + esc(p.price) + " (" + esc(p.src) + ")</div>" +
-              (p.note ? "<div class='note-line info'>" + esc(p.note) + "</div>" : "") +
-            "</div>" +
+            "<div class='brand-line amber'>" + esc(p.b) + " · Used · " + p.y + "</div><h3>" + esc(p.n) + "</h3>" +
+            "<p class='spec-line'>" + specLine + "</p>" +
+            "<div class='price-row'><span class='price-tag'>" + esc(p.used) + "</span><span class='price-type'>Used asking range</span></div>" +
+            "<div class='src-line'>Source: <b>" + esc(p.usrc || "") + "</b> · New price: " + esc(p.price) + " (" + esc(p.src) + ")</div>" +
+            (p.note ? "<div class='note-line info'>" + esc(p.note) + "</div>" : "") +
           "</div></article>";
       }
       function usedExtraHTML(p){
@@ -775,7 +866,7 @@ footer b{color:var(--text)}
         return "<article class='card'>" + umedia +
           "<div class='card-body'><div><div class='brand-line amber'>" + esc(p.b) + " · Used only</div><h3>" + esc(p.n) + "</h3></div>" +
           "<p style='margin:0;color:var(--muted);font-size:.85rem;line-height:1.6'>Ye model 2023–2025 launch list se bahar hai, lekin is ki verified used asking range available hai.</p>" +
-          "<div class='price-block'><div class='used-line'><span>Used asking range</span><b>" + esc(p.range) + "</b></div>" +
+          "<div class='price-row'><span class='price-tag'>" + esc(p.range) + "</span><span class='price-type'>Used asking range</span></div>" +
           "<div class='src-line'>Source: <b>LatestPricePakistan</b> — Sellphone listings, updated 16 Nov 2026 · Asking prices hain, confirmed sales nahi</div></div>" +
           "</div></article>";
       }
@@ -994,7 +1085,62 @@ footer b{color:var(--text)}
           return "<div class='budget-item'><div><b style='color:var(--text);font-family:Archivo,sans-serif'>" + esc(p.n) + "</b><span>" + p.y + " · " + (p.pta === "approved" ? "PTA Approved" : p.pta === "nonpta" ? "Non-PTA Import" : "PTA Not Verified") + " · " + PT_LABEL[p.pt] + " · Source: " + esc(p.src) + "</span></div><b>" + esc(p.price.split("·")[0].trim()) + "</b></div>";
         }).join("") + "<p style='margin:.3rem 0 0;color:var(--faint);font-size:.8rem'>Poori details ke liye upar list mein yehi model search karo.</p>";
       });
-    </script>
+          /* ===== WHATMOBILE-STYLE EXTRAS: banner, latest strip, bottom bar ===== */
+      (function(){
+        function imgFor(p){ return p.img || (typeof PHOTO !== "undefined" && PHOTO[p.n]) || ""; }
+        var latest = PHONES.filter(function(p){ return p.y === 2025 && imgFor(p); }).slice(0, 3);
+        ["bnImg0","bnImg1","bnImg2"].forEach(function(id, i){
+          var el = document.getElementById(id);
+          if (el && latest[i]) { el.src = imgFor(latest[i]); el.alt = latest[i].n; }
+        });
+        var strip = document.getElementById("latestStrip");
+        if (strip) {
+          var items = PHONES.filter(function(p){ return p.y === 2025; }).slice(0, 10);
+          strip.innerHTML = items.map(function(p){
+            var im = imgFor(p);
+            return "<div class='wm-mini' data-name='" + esc(p.n) + "'>" +
+              (im ? "<img src='" + im + "' alt='' loading='lazy' />" : "") +
+              "<b>" + esc(p.n) + "</b><span>" + esc((p.price.match(/Rs\.[\s\d,]+/) || [p.price])[0]) + "</span></div>";
+          }).join("");
+          strip.addEventListener("click", function(e){
+            var card = e.target.closest(".wm-mini");
+            if (!card) return;
+            var q = card.getAttribute("data-name") || "";
+            var inp = document.getElementById("searchNew");
+            if (inp) { inp.value = q; inp.dispatchEvent(new Event("input", { bubbles: true })); }
+            document.getElementById("catalog").scrollIntoView({ behavior: "smooth" });
+          });
+        }
+        var menuBtn = document.getElementById("wmMenuBtn"), nav = document.getElementById("wmNav");
+        if (menuBtn && nav) menuBtn.addEventListener("click", function(){
+          var open = nav.classList.toggle("open");
+          menuBtn.setAttribute("aria-expanded", String(open));
+        });
+        var sBtn = document.getElementById("wmSearchBtn");
+        if (sBtn) sBtn.addEventListener("click", function(){
+          document.getElementById("catalog").scrollIntoView({ behavior: "smooth" });
+          var inp = document.getElementById("searchNew");
+          if (inp) setTimeout(function(){ inp.focus(); }, 450);
+        });
+        var fBtn = document.getElementById("wmFilterBtn");
+        if (fBtn) fBtn.addEventListener("click", function(){
+          document.getElementById("catalog").scrollIntoView({ behavior: "smooth" });
+        });
+        var sortSel = document.getElementById("sortNew");
+        var bbSort = document.getElementById("bbSort");
+        if (bbSort && sortSel) bbSort.addEventListener("click", function(){
+          sortSel.selectedIndex = (sortSel.selectedIndex + 1) % sortSel.options.length;
+          sortSel.dispatchEvent(new Event("change", { bubbles: true }));
+        });
+        var bbList = document.getElementById("bbList"), bbGrid = document.getElementById("bbGrid");
+        if (bbList) bbList.addEventListener("click", function(){ document.body.classList.remove("wm-grid"); });
+        if (bbGrid) bbGrid.addEventListener("click", function(){ document.body.classList.add("wm-grid"); });
+        var bbFilter = document.getElementById("bbFilter");
+        if (bbFilter) bbFilter.addEventListener("click", function(){
+          document.getElementById("catalog").scrollIntoView({ behavior: "smooth" });
+        });
+      })();
+</script>
     <script>
       /* ===== RASHO BHAI CHAT — sirf isi page ki verified lists (PHONES / USED_EXTRA / SC) se jawab ===== */
       (function(){
