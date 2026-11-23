@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dilbar121212.github.io/mobile-mandi-live-pk/sitemap.xml
